@@ -25,26 +25,26 @@ df.head()
 # Consulta SQL: Calcula o volume total de clientes e o percentual de cancelamento (Churn Rate) da base
 print("=== 1. TAXA GERAL DE CHURN (SQL) ===")
 query1 = """
-SELECT
+select
     churn,
-    COUNT(*) as total_clientes,
-    ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM telecom_churn), 2) as porcentagem
-FROM telecom_churn
-GROUP BY churn;
+    count(*) as total_clientes,
+    round(count(*) * 100.0 / (select count(*) from telecom_churn), 2) as porcentagem
+from telecom_churn
+group by churn;
 """
 print(pd.read_sql_query(query1, conn))
 
 # Consulta SQL: Cruza o tipo de contrato e a forma de pagamento para identificar onde ocorrem mais evasões
 print("\n=== 2. CHURN POR FORMA DE PAGAMENTO (SQL) ===")
 query2 = """
-SELECT
+select
     contract,
     payment_method,
-    COUNT(*) as total_cancelamentos
-FROM telecom_churn
-WHERE churn = 'Yes'
-GROUP BY contract, payment_method
-ORDER BY total_cancelamentos DESC;
+    count(*) as total_cancelamentos
+from telecom_churn
+where churn = 'Yes'
+group by contract, payment_method
+order by total_cancelamentos DESC;
 """
 print(pd.read_sql_query(query2, conn))
 
