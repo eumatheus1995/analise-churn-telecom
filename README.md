@@ -7,22 +7,24 @@ Este projeto tem como objetivo analisar o comportamento de cancelamento de clien
 
 ## 🔍 Perguntas de Negócio Respondidas
 1. Qual é a taxa geral de cancelamento de clientes da base?
-2. Quais formas de pagamento concentram o maior volume de cancelamentos?
-3. Como o tempo de contrato (tenure) influencia a decisão de cancelamento?
+   Resultado: A taxa geral de Churn é de **26,54%** (1.869 clientes cancelados).
+3. Quais formas de pagamento concentram o maior volume de cancelamentos?
+   Resultado: Contratos mensais (`Month-to-month`) pagos via Cheque Eletrônico (`Electronic check`) lideram com **994 cancelamentos** (representando mais de 53% de todo o churn).
+4. Como o tempo de contrato (tenure) influencia a decisão de cancelamento?
+   Resultado: A média de permanência dos clientes que cancelam é de **18 meses**, contra **37,6 meses** dos clientes retidos.
 
 ---
 
 ## 🛠️ Tecnologias e Ferramentas Utilizadas
-- **SQL (PostgreSQL):** Consultas e agregação de dados.
-- **Python (Pandas):** Análise exploratória e manipulação de dados.
-- **Excel / Google Sheets:** Validação rápida de indicadores.
+- **SQL (SQLite):** Agregações avançadas, subconsultas e agrupamento de dados.
+- **Python (Pandas):** Leitura de dados, limpeza, padronização de colunas e médias operacionais.
+- **Google Colab:** Ambiente de execução e desenvolvimento do código.
 
 ---
 
-## 📈 Principais Insights Encontrados
-- **Tempo de Contrato:** Clientes com menos de 6 meses de empresa correspondem à maior fatia dos cancelamentos.
-- **Forma de Pagamento:** Pagamentos via boleto bancário apresentam taxa de evasão significativamente maior do que pagamentos via cartão automático.
-- **Recomendação Estratégica:** Criar campanhas de onboarding focadas nos primeiros 90 dias e incentivar a migração para o débito automático.
+## 💡 Recomendações Estratégicas para o Negócio
+- **Migração de Forma de Pagamento:** Incentivar a migração de clientes em cheque eletrônico para débito automático ou cartão de crédito através de pequenos descontos ou benefícios na fatura.
+- **Campanhas de Engajamento Precoce:** Criar ações de onboarding e retenção direcionadas aos clientes nos primeiros 18 meses de contrato.
 
 ---
 
